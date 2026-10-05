@@ -6231,21 +6231,4431 @@ function doPost(e) {
       return isFinite(n) ? n : 0;
     }
 
-    let sales = JSON.parse(localStorage.getItem('PA_SALES_V2')) || [];
+    // ==================== DEFAULT SYSTEM DATABASE SEED ====================
+    // Seeded with historical records so that deployment to GitHub Pages, mobile phones,
+    // or new browser sessions immediately contains all operations and configurations.
+    const DEFAULT_SYSTEM_SEED = {
+  "sales": [
+    {
+      "id": "S_1791175591351",
+      "date": "2026-10-05",
+      "dsr": "Thuwan",
+      "brand": "Samsung DSR",
+      "invNo": "274995668",
+      "dealer": "VLP Mobile",
+      "method": "Direct Deposit",
+      "amount": 80000,
+      "details": {
+        "depositBank": "Bank of Ceylon (BOC)",
+        "bankAccNo": "713",
+        "depositDate": "2026-10-03"
+      },
+      "status": "Verified",
+      "enteredBy": "Shabeer (Manager)",
+      "enteredAt": "2026-10-05T04:46:31.351Z",
+      "verifiedBy": "Shabeer (Manager)",
+      "verifiedAt": "2026-10-05T04:46:31.351Z"
+    },
+    {
+      "id": "S_1791175560983",
+      "date": "2026-10-05",
+      "dsr": "Thuwan",
+      "brand": "Samsung DSR",
+      "invNo": "274995976",
+      "dealer": "Smart Mobile",
+      "method": "Cheque",
+      "amount": 107658,
+      "details": {
+        "chequeBank": "Bank of Ceylon (BOC)",
+        "chequeNo": "329242",
+        "chequeDate": "2026-10-11"
+      },
+      "status": "Verified",
+      "enteredBy": "Shabeer (Manager)",
+      "enteredAt": "2026-10-05T04:46:00.983Z",
+      "verifiedBy": "Shabeer (Manager)",
+      "verifiedAt": "2026-10-05T04:46:00.983Z"
+    },
+    {
+      "id": "S_1791173711951",
+      "date": "2026-10-05",
+      "dsr": "Madushan",
+      "brand": "VIVO DSR",
+      "invNo": "274996108",
+      "dealer": "Smart Mobile",
+      "method": "Cheque",
+      "amount": 85491,
+      "details": {
+        "chequeBank": "Bank of Ceylon (BOC)",
+        "chequeNo": "329239",
+        "chequeDate": "2026-10-18"
+      },
+      "status": "Verified",
+      "enteredBy": "Shabeer (Manager)",
+      "enteredAt": "2026-10-05T04:15:11.951Z",
+      "verifiedBy": "Shabeer (Manager)",
+      "verifiedAt": "2026-10-05T04:15:11.951Z"
+    },
+    {
+      "id": "S_1791171208257",
+      "date": "2026-10-05",
+      "dsr": "Malisha",
+      "brand": "ZTE & nubia DSR",
+      "invNo": "274996173",
+      "dealer": "Sisira Mobile",
+      "method": "Cash",
+      "amount": 128417,
+      "details": {},
+      "status": "Verified",
+      "enteredBy": "Shabeer (Manager)",
+      "enteredAt": "2026-10-05T03:33:28.257Z",
+      "verifiedBy": "Shabeer (Manager)",
+      "verifiedAt": "2026-10-05T03:33:28.257Z"
+    },
+    {
+      "id": "S_1791170598240",
+      "date": "2026-10-05",
+      "dsr": "Kasun",
+      "brand": "Honor DSR",
+      "invNo": "274996145",
+      "dealer": "Star Com",
+      "method": "Cheque",
+      "amount": 234776,
+      "details": {
+        "chequeBank": "People's Bank",
+        "chequeNo": "000697",
+        "chequeDate": "2026-10-20"
+      },
+      "status": "Verified",
+      "enteredBy": "Shabeer (Manager)",
+      "enteredAt": "2026-10-05T03:23:18.240Z",
+      "verifiedBy": "Shabeer (Manager)",
+      "verifiedAt": "2026-10-05T03:23:18.240Z"
+    },
+    {
+      "id": "S_1791007982925",
+      "date": "2026-10-01",
+      "dsr": "Anjana",
+      "brand": "Nokia DSR",
+      "invNo": "OLD RTN CheQUE-RC-PARTIAL",
+      "dealer": "Ahesh Mobile",
+      "method": "Cash",
+      "amount": 150000,
+      "isReturnSettlement": true,
+      "returnChequeId": "RC_1791007908716",
+      "details": {
+        "cashReceiptRef": "RC-312337"
+      },
+      "status": "Verified",
+      "enteredBy": "Shabeer (Manager)",
+      "verifiedBy": "Shabeer (Manager)",
+      "verifiedAt": "2026-10-05T02:48:32.683Z"
+    },
+    {
+      "id": "S_1791007563411",
+      "date": "2026-10-03",
+      "dsr": "Malisha",
+      "brand": "ZTE & nubia DSR",
+      "invNo": "274996163",
+      "dealer": "MS Mart mobile",
+      "method": "Direct Deposit",
+      "amount": 33637,
+      "details": {
+        "depositBank": "Bank of Ceylon (BOC)",
+        "bankAccNo": "394",
+        "depositDate": "2026-10-03"
+      },
+      "status": "Verified",
+      "enteredBy": "Shabeer (Manager)",
+      "enteredAt": "2026-10-03T06:06:03.411Z",
+      "verifiedBy": "Shabeer (Manager)",
+      "verifiedAt": "2026-10-03T06:06:03.411Z"
+    },
+    {
+      "id": "S_1791007534131",
+      "date": "2026-10-03",
+      "dsr": "Malisha",
+      "brand": "ZTE & nubia DSR",
+      "invNo": "274996163",
+      "dealer": "MS Mart mobile",
+      "method": "Cash",
+      "amount": 60000,
+      "details": {},
+      "status": "Verified",
+      "enteredBy": "Shabeer (Manager)",
+      "enteredAt": "2026-10-03T06:05:34.131Z",
+      "verifiedBy": "Shabeer (Manager)",
+      "verifiedAt": "2026-10-03T06:05:34.131Z"
+    },
+    {
+      "id": "S_1791007505091",
+      "date": "2026-10-03",
+      "dsr": "Thuwan",
+      "brand": "Samsung DSR",
+      "invNo": "274996116",
+      "dealer": "Star com",
+      "method": "Cheque",
+      "amount": 193750,
+      "details": {
+        "chequeBank": "People's Bank",
+        "chequeNo": "000699",
+        "chequeDate": "2026-10-24"
+      },
+      "status": "Verified",
+      "enteredBy": "Shabeer (Manager)",
+      "enteredAt": "2026-10-03T06:05:05.091Z",
+      "verifiedBy": "Shabeer (Manager)",
+      "verifiedAt": "2026-10-03T06:05:05.091Z"
+    },
+    {
+      "id": "S_1791007469027",
+      "date": "2026-10-03",
+      "dsr": "Thuwan",
+      "brand": "Samsung DSR",
+      "invNo": "274996116",
+      "dealer": "Star com",
+      "method": "Cheque",
+      "amount": 193749,
+      "details": {
+        "chequeBank": "People's Bank",
+        "chequeNo": "000698",
+        "chequeDate": "2026-10-22"
+      },
+      "status": "Verified",
+      "enteredBy": "Shabeer (Manager)",
+      "enteredAt": "2026-10-03T06:04:29.028Z",
+      "verifiedBy": "Shabeer (Manager)",
+      "verifiedAt": "2026-10-03T06:04:29.027Z"
+    },
+    {
+      "id": "S_1790941763751",
+      "date": "2026-10-02",
+      "dsr": "Thuwan",
+      "brand": "Samsung DSR",
+      "invNo": "274995832",
+      "dealer": "Wills Cellular",
+      "method": "Cheque",
+      "amount": 143590,
+      "details": {
+        "chequeBank": "Bank of Ceylon (BOC)",
+        "chequeNo": "459256",
+        "chequeDate": "2026-10-03"
+      },
+      "status": "Verified",
+      "enteredBy": "Shabeer (Manager)",
+      "enteredAt": "2026-10-02T11:49:23.751Z",
+      "verifiedBy": "Shabeer (Manager)",
+      "verifiedAt": "2026-10-02T11:49:23.751Z"
+    },
+    {
+      "id": "S_1790941736790",
+      "date": "2026-10-02",
+      "dsr": "Thuwan",
+      "brand": "Samsung DSR",
+      "invNo": "274996133",
+      "dealer": "Jazha mobile",
+      "method": "Cash",
+      "amount": 14000,
+      "details": {},
+      "status": "Verified",
+      "enteredBy": "Shabeer (Manager)",
+      "enteredAt": "2026-10-02T11:48:56.790Z",
+      "verifiedBy": "Shabeer (Manager)",
+      "verifiedAt": "2026-10-02T11:48:56.790Z"
+    },
+    {
+      "id": "S_1790941713550",
+      "date": "2026-10-02",
+      "dsr": "Thuwan",
+      "brand": "Samsung DSR",
+      "invNo": "274996133",
+      "dealer": "Jazha mobile",
+      "method": "Cheque",
+      "amount": 38829,
+      "details": {
+        "chequeBank": "Sampath Bank",
+        "chequeNo": "138597",
+        "chequeDate": "2026-10-24"
+      },
+      "status": "Verified",
+      "enteredBy": "Shabeer (Manager)",
+      "enteredAt": "2026-10-02T11:48:33.550Z",
+      "verifiedBy": "Shabeer (Manager)",
+      "verifiedAt": "2026-10-02T11:48:33.550Z"
+    },
+    {
+      "id": "S_1790941682215",
+      "date": "2026-10-02",
+      "dsr": "Thuwan",
+      "brand": "Samsung DSR",
+      "invNo": "274995767",
+      "dealer": "Nuwan cellular",
+      "method": "Direct Deposit",
+      "amount": 124512,
+      "details": {
+        "depositBank": "Bank of Ceylon (BOC)",
+        "bankAccNo": "713",
+        "depositDate": "2026-10-01"
+      },
+      "status": "Verified",
+      "enteredBy": "Shabeer (Manager)",
+      "enteredAt": "2026-10-02T11:48:02.215Z",
+      "verifiedBy": "Shabeer (Manager)",
+      "verifiedAt": "2026-10-02T11:48:02.215Z"
+    },
+    {
+      "id": "S_1790941652695",
+      "date": "2026-10-02",
+      "dsr": "Thuwan",
+      "brand": "Samsung DSR",
+      "invNo": "274995825",
+      "dealer": "SMB mobile",
+      "method": "Cheque",
+      "amount": 400000,
+      "details": {
+        "chequeBank": "Bank of Ceylon (BOC)",
+        "chequeNo": "477253",
+        "chequeDate": "2026-10-09"
+      },
+      "status": "Verified",
+      "enteredBy": "Shabeer (Manager)",
+      "enteredAt": "2026-10-02T11:47:32.695Z",
+      "verifiedBy": "Shabeer (Manager)",
+      "verifiedAt": "2026-10-02T11:47:32.695Z"
+    },
+    {
+      "id": "S_1790941635390",
+      "date": "2026-10-02",
+      "dsr": "Thuwan",
+      "brand": "Samsung DSR",
+      "invNo": "274995825",
+      "dealer": "SMB mobile",
+      "method": "Cheque",
+      "amount": 400000,
+      "details": {
+        "chequeBank": "Bank of Ceylon (BOC)",
+        "chequeNo": "477252",
+        "chequeDate": "2026-10-08"
+      },
+      "status": "Verified",
+      "enteredBy": "Shabeer (Manager)",
+      "enteredAt": "2026-10-02T11:47:15.390Z",
+      "verifiedBy": "Shabeer (Manager)",
+      "verifiedAt": "2026-10-02T11:47:15.390Z"
+    },
+    {
+      "id": "S_1790941618030",
+      "date": "2026-10-02",
+      "dsr": "Thuwan",
+      "brand": "Samsung DSR",
+      "invNo": "274995825",
+      "dealer": "SMB mobile",
+      "method": "Cheque",
+      "amount": 500000,
+      "details": {
+        "chequeBank": "Bank of Ceylon (BOC)",
+        "chequeNo": "477255",
+        "chequeDate": "2026-10-11"
+      },
+      "status": "Verified",
+      "enteredBy": "Shabeer (Manager)",
+      "enteredAt": "2026-10-02T11:46:58.030Z",
+      "verifiedBy": "Shabeer (Manager)",
+      "verifiedAt": "2026-10-02T11:46:58.030Z"
+    },
+    {
+      "id": "S_1790941600438",
+      "date": "2026-10-02",
+      "dsr": "Thuwan",
+      "brand": "Samsung DSR",
+      "invNo": "274995825",
+      "dealer": "SMB mobile",
+      "method": "Cheque",
+      "amount": 507509,
+      "details": {
+        "chequeBank": "Bank of Ceylon (BOC)",
+        "chequeNo": "477256",
+        "chequeDate": "2026-10-12"
+      },
+      "status": "Verified",
+      "enteredBy": "Shabeer (Manager)",
+      "enteredAt": "2026-10-02T11:46:40.438Z",
+      "verifiedBy": "Shabeer (Manager)",
+      "verifiedAt": "2026-10-02T11:46:40.438Z"
+    },
+    {
+      "id": "S_1790941564286",
+      "date": "2026-10-02",
+      "dsr": "Kasun",
+      "brand": "Honor DSR",
+      "invNo": "274995963",
+      "dealer": "N2 mobile",
+      "method": "Cheque",
+      "amount": 141050,
+      "details": {
+        "chequeBank": "People's Bank",
+        "chequeNo": "000501",
+        "chequeDate": "2026-10-03"
+      },
+      "status": "Verified",
+      "enteredBy": "Shabeer (Manager)",
+      "enteredAt": "2026-10-02T11:46:04.286Z",
+      "verifiedBy": "Shabeer (Manager)",
+      "verifiedAt": "2026-10-02T11:46:04.286Z"
+    },
+    {
+      "id": "S_1790941530478",
+      "date": "2026-10-02",
+      "dsr": "Kasun",
+      "brand": "Honor DSR",
+      "invNo": "274995659",
+      "dealer": "Singapoor cellular",
+      "method": "Direct Deposit",
+      "amount": 290000,
+      "details": {
+        "depositBank": "Bank of Ceylon (BOC)",
+        "bankAccNo": "394",
+        "depositDate": "2026-09-28"
+      },
+      "status": "Verified",
+      "enteredBy": "Shabeer (Manager)",
+      "enteredAt": "2026-10-02T11:45:30.478Z",
+      "verifiedBy": "Shabeer (Manager)",
+      "verifiedAt": "2026-10-02T11:45:30.478Z"
+    },
+    {
+      "id": "S_1790941499430",
+      "date": "2026-10-02",
+      "dsr": "Kasun",
+      "brand": "Honor DSR",
+      "invNo": "274995659",
+      "dealer": "Singapoor cellular",
+      "method": "Direct Deposit",
+      "amount": 100000,
+      "details": {
+        "depositBank": "Bank of Ceylon (BOC)",
+        "bankAccNo": "394",
+        "depositDate": "2026-10-01"
+      },
+      "status": "Verified",
+      "enteredBy": "Shabeer (Manager)",
+      "enteredAt": "2026-10-02T11:44:59.430Z",
+      "verifiedBy": "Shabeer (Manager)",
+      "verifiedAt": "2026-10-02T11:44:59.430Z"
+    },
+    {
+      "id": "S_1790771346924",
+      "date": "2026-09-30",
+      "dsr": "Irshad",
+      "brand": "Nokia DSR",
+      "invNo": "OLD System-CASH",
+      "dealer": "Jazha Mobile",
+      "method": "Cash",
+      "amount": 111200,
+      "details": {},
+      "status": "Verified",
+      "enteredBy": "Shabeer (Manager)",
+      "verifiedBy": "Shabeer (Manager)",
+      "verifiedAt": "2026-10-02T11:44:17.954Z"
+    },
+    {
+      "id": "S_1790771056748",
+      "date": "2026-09-30",
+      "dsr": "Kasun",
+      "brand": "Honor DSR",
+      "invNo": "274995104",
+      "dealer": "SNS Mobile",
+      "method": "Direct Deposit",
+      "amount": 299640,
+      "details": {
+        "depositBank": "Bank of Ceylon (BOC)",
+        "bankAccNo": "394",
+        "depositDate": "2026-08-11"
+      },
+      "status": "Verified",
+      "enteredBy": "Shabeer (Manager)",
+      "enteredAt": "2026-09-30T12:24:16.748Z",
+      "verifiedBy": "Shabeer (Manager)",
+      "verifiedAt": "2026-09-30T12:24:16.748Z"
+    },
+    {
+      "id": "S_1790771029868",
+      "date": "2026-09-30",
+      "dsr": "Kasun",
+      "brand": "Honor DSR",
+      "invNo": "274995907",
+      "dealer": "Tharindhu Com",
+      "method": "Cheque",
+      "amount": 17000,
+      "details": {
+        "chequeBank": "DFCC Bank",
+        "chequeNo": "033459",
+        "chequeDate": "2026-10-10"
+      },
+      "status": "Verified",
+      "enteredBy": "Shabeer (Manager)",
+      "enteredAt": "2026-09-30T12:23:49.868Z",
+      "verifiedBy": "Shabeer (Manager)",
+      "verifiedAt": "2026-09-30T12:23:49.868Z"
+    },
+    {
+      "id": "S_1790770992693",
+      "date": "2026-09-30",
+      "dsr": "Kasun",
+      "brand": "Honor DSR",
+      "invNo": "274995907",
+      "dealer": "Tharindhu Com",
+      "method": "Cheque",
+      "amount": 250000,
+      "details": {
+        "chequeBank": "Bank of Ceylon (BOC)",
+        "chequeNo": "330172",
+        "chequeDate": "2026-10-14"
+      },
+      "status": "Verified",
+      "enteredBy": "Shabeer (Manager)",
+      "enteredAt": "2026-09-30T12:23:12.693Z",
+      "verifiedBy": "Shabeer (Manager)",
+      "verifiedAt": "2026-09-30T12:23:12.693Z"
+    },
+    {
+      "id": "S_1790770958893",
+      "date": "2026-09-30",
+      "dsr": "Kasun",
+      "brand": "Honor DSR",
+      "invNo": "274995907",
+      "dealer": "Tharindu Com",
+      "method": "Cheque",
+      "amount": 250000,
+      "details": {
+        "chequeBank": "Bank of Ceylon (BOC)",
+        "chequeNo": "330173",
+        "chequeDate": "2026-10-12"
+      },
+      "status": "Verified",
+      "enteredBy": "Shabeer (Manager)",
+      "enteredAt": "2026-09-30T12:22:38.893Z",
+      "verifiedBy": "Shabeer (Manager)",
+      "verifiedAt": "2026-09-30T12:22:38.893Z"
+    },
+    {
+      "id": "S_1790770937628",
+      "date": "2026-09-30",
+      "dsr": "Kasun",
+      "brand": "Honor DSR",
+      "invNo": "274995907",
+      "dealer": "Tharindhu Com",
+      "method": "Cheque",
+      "amount": 250000,
+      "details": {
+        "chequeBank": "Bank of Ceylon (BOC)",
+        "chequeNo": "330175",
+        "chequeDate": "2026-10-15"
+      },
+      "status": "Verified",
+      "enteredBy": "Shabeer (Manager)",
+      "enteredAt": "2026-09-30T12:22:17.628Z",
+      "verifiedBy": "Shabeer (Manager)",
+      "verifiedAt": "2026-09-30T12:22:17.628Z"
+    },
+    {
+      "id": "S_1790770908373",
+      "date": "2026-09-30",
+      "dsr": "Kasun",
+      "brand": "Honor DSR",
+      "invNo": "274995907",
+      "dealer": "Tharindhu Com",
+      "method": "Cheque",
+      "amount": 250000,
+      "details": {
+        "chequeBank": "Bank of Ceylon (BOC)",
+        "chequeNo": "330174",
+        "chequeDate": "2026-10-11"
+      },
+      "status": "Verified",
+      "enteredBy": "Shabeer (Manager)",
+      "enteredAt": "2026-09-30T12:21:48.373Z",
+      "verifiedBy": "Shabeer (Manager)",
+      "verifiedAt": "2026-09-30T12:21:48.373Z"
+    },
+    {
+      "id": "S_1790770863733",
+      "date": "2026-09-30",
+      "dsr": "Kasun",
+      "brand": "Honor DSR",
+      "invNo": "274995907",
+      "dealer": "Tharindhu Com",
+      "method": "Cheque",
+      "amount": 153283,
+      "details": {
+        "chequeBank": "Bank of Ceylon (BOC)",
+        "chequeNo": "330171",
+        "chequeDate": "2026-10-10"
+      },
+      "status": "Verified",
+      "enteredBy": "Shabeer (Manager)",
+      "enteredAt": "2026-09-30T12:21:03.733Z",
+      "verifiedBy": "Shabeer (Manager)",
+      "verifiedAt": "2026-09-30T12:21:03.733Z"
+    },
+    {
+      "id": "S_1790770841468",
+      "date": "2026-09-30",
+      "dsr": "Kasun",
+      "brand": "Honor DSR",
+      "invNo": "274995907",
+      "dealer": "Tharindu com",
+      "method": "Cheque",
+      "amount": 40000,
+      "details": {
+        "chequeBank": "Bank of Ceylon (BOC)",
+        "chequeNo": "328823",
+        "chequeDate": "2026-10-09"
+      },
+      "status": "Verified",
+      "enteredBy": "Shabeer (Manager)",
+      "enteredAt": "2026-09-30T12:20:41.468Z",
+      "verifiedBy": "Shabeer (Manager)",
+      "verifiedAt": "2026-09-30T12:20:41.468Z"
+    },
+    {
+      "id": "S_1790770800548",
+      "date": "2026-09-30",
+      "dsr": "Malisha",
+      "brand": "ZTE & nubia DSR",
+      "invNo": "274996121",
+      "dealer": "Sinera Mobile",
+      "method": "Cash",
+      "amount": 70000,
+      "details": {},
+      "status": "Verified",
+      "enteredBy": "Shabeer (Manager)",
+      "enteredAt": "2026-09-30T12:20:00.548Z",
+      "verifiedBy": "Shabeer (Manager)",
+      "verifiedAt": "2026-09-30T12:20:00.548Z"
+    },
+    {
+      "id": "S_1790770771836",
+      "date": "2026-09-30",
+      "dsr": "Malisha",
+      "brand": "ZTE & nubia DSR",
+      "invNo": "274995775",
+      "dealer": "Next Point",
+      "method": "Cash",
+      "amount": 31213,
+      "details": {},
+      "status": "Verified",
+      "enteredBy": "Shabeer (Manager)",
+      "enteredAt": "2026-09-30T12:19:31.836Z",
+      "verifiedBy": "Shabeer (Manager)",
+      "verifiedAt": "2026-09-30T12:19:31.836Z"
+    },
+    {
+      "id": "S_1790770749028",
+      "date": "2026-09-30",
+      "dsr": "Malisha",
+      "brand": "ZTE & nubia DSR",
+      "invNo": "274995775",
+      "dealer": "Rio Com",
+      "method": "Direct Deposit",
+      "amount": 63650,
+      "details": {
+        "depositBank": "Sampath Bank",
+        "bankAccNo": "552",
+        "depositDate": "2026-09-29"
+      },
+      "status": "Verified",
+      "enteredBy": "Shabeer (Manager)",
+      "enteredAt": "2026-09-30T12:19:09.028Z",
+      "verifiedBy": "Shabeer (Manager)",
+      "verifiedAt": "2026-09-30T12:19:09.028Z"
+    },
+    {
+      "id": "S_1790770720068",
+      "date": "2026-09-30",
+      "dsr": "Malisha",
+      "brand": "ZTE & nubia DSR",
+      "invNo": "274995775",
+      "dealer": "Rio Com",
+      "method": "Cash",
+      "amount": 48,
+      "details": {},
+      "status": "Verified",
+      "enteredBy": "Shabeer (Manager)",
+      "enteredAt": "2026-09-30T12:18:40.068Z",
+      "verifiedBy": "Shabeer (Manager)",
+      "verifiedAt": "2026-09-30T12:18:40.068Z"
+    },
+    {
+      "id": "S_1790770683622",
+      "date": "2026-09-30",
+      "dsr": "Madushan",
+      "brand": "VIVO DSR",
+      "invNo": "274996104",
+      "dealer": "New City Cellular",
+      "method": "Cheque",
+      "amount": 222004,
+      "details": {
+        "chequeBank": "Bank of Ceylon (BOC)",
+        "chequeNo": "331936",
+        "chequeDate": "2026-10-20"
+      },
+      "status": "Verified",
+      "enteredBy": "Shabeer (Manager)",
+      "enteredAt": "2026-09-30T12:18:03.622Z",
+      "verifiedBy": "Shabeer (Manager)",
+      "verifiedAt": "2026-09-30T12:18:03.622Z"
+    },
+    {
+      "id": "S_1790770653053",
+      "date": "2026-09-30",
+      "dsr": "Madushan",
+      "brand": "VIVO DSR",
+      "invNo": "274996072",
+      "dealer": "Ontime Mobile",
+      "method": "Cheque",
+      "amount": 101902,
+      "details": {
+        "chequeBank": "People's Bank",
+        "chequeNo": "960539",
+        "chequeDate": "2026-10-16"
+      },
+      "status": "Verified",
+      "enteredBy": "Shabeer (Manager)",
+      "enteredAt": "2026-09-30T12:17:33.053Z",
+      "verifiedBy": "Shabeer (Manager)",
+      "verifiedAt": "2026-09-30T12:17:33.053Z"
+    },
+    {
+      "id": "S_1790770582941",
+      "date": "2026-09-30",
+      "dsr": "Irshad",
+      "brand": "Nokia DSR",
+      "invNo": "274996098",
+      "dealer": "Beauty World",
+      "method": "Cheque",
+      "amount": 99000,
+      "details": {
+        "chequeBank": "People's Bank",
+        "chequeNo": "000145",
+        "chequeDate": "2026-10-18"
+      },
+      "status": "Verified",
+      "enteredBy": "Shabeer (Manager)",
+      "enteredAt": "2026-09-30T12:16:22.941Z",
+      "verifiedBy": "Shabeer (Manager)",
+      "verifiedAt": "2026-09-30T12:16:22.941Z"
+    },
+    {
+      "id": "S_1790770546236",
+      "date": "2026-09-30",
+      "dsr": "Thuwan",
+      "brand": "Samsung DSR",
+      "invNo": "274996077",
+      "dealer": "Smart Mobile",
+      "method": "Cheque",
+      "amount": 528290,
+      "details": {
+        "chequeBank": "Bank of Ceylon (BOC)",
+        "chequeNo": "383166",
+        "chequeDate": "2026-10-20"
+      },
+      "status": "Verified",
+      "enteredBy": "Shabeer (Manager)",
+      "enteredAt": "2026-09-30T12:15:46.236Z",
+      "verifiedBy": "Shabeer (Manager)",
+      "verifiedAt": "2026-09-30T12:15:46.236Z"
+    },
+    {
+      "id": "S_1790770510836",
+      "date": "2026-09-30",
+      "dsr": "Thuwan",
+      "brand": "Samsung DSR",
+      "invNo": "274995978",
+      "dealer": "Jazha Mobile",
+      "method": "Cheque",
+      "amount": 161487,
+      "details": {
+        "chequeBank": "Amana Bank",
+        "chequeNo": "000002",
+        "chequeDate": "2026-10-15"
+      },
+      "status": "Verified",
+      "enteredBy": "Shabeer (Manager)",
+      "enteredAt": "2026-09-30T12:15:10.836Z",
+      "verifiedBy": "Shabeer (Manager)",
+      "verifiedAt": "2026-09-30T12:15:10.836Z"
+    },
+    {
+      "id": "S_1790770451213",
+      "date": "2026-09-30",
+      "dsr": "Anjana",
+      "brand": "Nokia DSR",
+      "invNo": "274996097",
+      "dealer": "Tharindu Mobile",
+      "method": "Cash",
+      "amount": 21960,
+      "details": {},
+      "status": "Verified",
+      "enteredBy": "Shabeer (Manager)",
+      "enteredAt": "2026-09-30T12:14:11.213Z",
+      "verifiedBy": "Shabeer (Manager)",
+      "verifiedAt": "2026-09-30T12:14:11.213Z"
+    },
+    {
+      "id": "S_1790770419741",
+      "date": "2026-09-30",
+      "dsr": "Anjana",
+      "brand": "Nokia DSR",
+      "invNo": "274995667",
+      "dealer": "It Partner",
+      "method": "Cash",
+      "amount": 65880,
+      "details": {},
+      "status": "Verified",
+      "enteredBy": "Shabeer (Manager)",
+      "enteredAt": "2026-09-30T12:13:39.741Z",
+      "verifiedBy": "Shabeer (Manager)",
+      "verifiedAt": "2026-09-30T12:13:39.741Z"
+    },
+    {
+      "id": "S_1790770383461",
+      "date": "2026-09-30",
+      "dsr": "Anjana",
+      "brand": "Nokia DSR",
+      "invNo": "274996097",
+      "dealer": "Smart Mobile",
+      "method": "Cheque",
+      "amount": 27450,
+      "details": {
+        "chequeBank": "Bank of Ceylon (BOC)",
+        "chequeNo": "383167",
+        "chequeDate": "2026-10-22"
+      },
+      "status": "Verified",
+      "enteredBy": "Shabeer (Manager)",
+      "enteredAt": "2026-09-30T12:13:03.461Z",
+      "verifiedBy": "Shabeer (Manager)",
+      "verifiedAt": "2026-09-30T12:13:03.461Z"
+    },
+    {
+      "id": "S_1790770351508",
+      "date": "2026-09-30",
+      "dsr": "Anjana",
+      "brand": "Nokia DSR",
+      "invNo": "274996076",
+      "dealer": "The Phone House",
+      "method": "Cheque",
+      "amount": 13140,
+      "details": {
+        "chequeBank": "Bank of Ceylon (BOC)",
+        "chequeNo": "360597",
+        "chequeDate": "2026-10-17"
+      },
+      "status": "Verified",
+      "enteredBy": "Shabeer (Manager)",
+      "enteredAt": "2026-09-30T12:12:31.508Z",
+      "verifiedBy": "Shabeer (Manager)",
+      "verifiedAt": "2026-09-30T12:12:31.508Z"
+    },
+    {
+      "id": "S_1790770312388",
+      "date": "2026-09-30",
+      "dsr": "Anjana",
+      "brand": "Nokia DSR",
+      "invNo": "274996074",
+      "dealer": "Saumi Com",
+      "method": "Cheque",
+      "amount": 27450,
+      "details": {
+        "chequeBank": "Bank of Ceylon (BOC)",
+        "chequeNo": "380337",
+        "chequeDate": "2026-10-20"
+      },
+      "status": "Verified",
+      "enteredBy": "Shabeer (Manager)",
+      "enteredAt": "2026-09-30T12:11:52.388Z",
+      "verifiedBy": "Shabeer (Manager)",
+      "verifiedAt": "2026-09-30T12:11:52.388Z"
+    },
+    {
+      "id": "S_1790679933295",
+      "date": "2026-09-29",
+      "dsr": "Irshad",
+      "brand": "Nokia DSR",
+      "invNo": "274995678",
+      "dealer": "Jazha Mobile",
+      "method": "Cheque",
+      "amount": 229500,
+      "details": {
+        "chequeBank": "Amana Bank",
+        "chequeNo": "000684",
+        "chequeDate": "2026-09-30"
+      },
+      "status": "Verified",
+      "enteredBy": "Shabeer (Manager)",
+      "enteredAt": "2026-09-29T11:05:33.295Z",
+      "verifiedBy": "Shabeer (Manager)",
+      "verifiedAt": "2026-09-29T11:05:33.295Z"
+    },
+    {
+      "id": "S_1790679355789",
+      "date": "2026-09-29",
+      "dsr": "Madushan",
+      "brand": "VIVO DSR",
+      "invNo": "274995652",
+      "dealer": "FRN Mobile",
+      "method": "Cheque",
+      "amount": 125562,
+      "details": {
+        "chequeBank": "Seylan Bank",
+        "chequeNo": "197415",
+        "chequeDate": "2026-09-30"
+      },
+      "status": "Verified",
+      "enteredBy": "Shabeer (Manager)",
+      "enteredAt": "2026-09-29T10:55:55.789Z",
+      "verifiedBy": "Shabeer (Manager)",
+      "verifiedAt": "2026-09-29T10:55:55.789Z"
+    },
+    {
+      "id": "S_1790679314557",
+      "date": "2026-09-29",
+      "dsr": "Malisha",
+      "brand": "ZTE & nubia DSR",
+      "invNo": "274996037",
+      "dealer": "Nimesh Dot net",
+      "method": "Cash",
+      "amount": 62425,
+      "details": {},
+      "status": "Verified",
+      "enteredBy": "Shabeer (Manager)",
+      "enteredAt": "2026-09-29T10:55:14.557Z",
+      "verifiedBy": "Shabeer (Manager)",
+      "verifiedAt": "2026-09-29T10:55:14.557Z"
+    },
+    {
+      "id": "S_1790679284998",
+      "date": "2026-09-29",
+      "dsr": "Irshad",
+      "brand": "Nokia DSR",
+      "invNo": "274996042",
+      "dealer": "City Plaza",
+      "method": "Direct Deposit",
+      "amount": 38250,
+      "details": {
+        "depositBank": "Bank of Ceylon (BOC)",
+        "bankAccNo": "394",
+        "depositDate": "2026-09-26"
+      },
+      "status": "Verified",
+      "enteredBy": "Shabeer (Manager)",
+      "enteredAt": "2026-09-29T10:54:44.998Z",
+      "verifiedBy": "Shabeer (Manager)",
+      "verifiedAt": "2026-09-29T10:54:44.998Z"
+    },
+    {
+      "id": "S_1790593379434",
+      "date": "2026-09-28",
+      "dsr": "Kasun",
+      "brand": "Honor DSR",
+      "invNo": "274995606",
+      "dealer": "Sisira Mobile",
+      "method": "Direct Deposit",
+      "amount": 67339,
+      "details": {
+        "depositBank": "Bank of Ceylon (BOC)",
+        "bankAccNo": "394",
+        "depositDate": "2026-09-26"
+      },
+      "status": "Verified",
+      "enteredBy": "Shabeer (Manager)",
+      "enteredAt": "2026-09-28T11:02:59.434Z",
+      "verifiedBy": "Shabeer (Manager)",
+      "verifiedAt": "2026-09-28T11:02:59.434Z"
+    },
+    {
+      "id": "S_1790593349715",
+      "date": "2026-09-28",
+      "dsr": "Kasun",
+      "brand": "Honor DSR",
+      "invNo": "274996033",
+      "dealer": "Dhanushka mobile",
+      "method": "Direct Deposit",
+      "amount": 81925,
+      "details": {
+        "depositBank": "Bank of Ceylon (BOC)",
+        "bankAccNo": "394",
+        "depositDate": "2026-09-26"
+      },
+      "status": "Verified",
+      "enteredBy": "Shabeer (Manager)",
+      "enteredAt": "2026-09-28T11:02:29.715Z",
+      "verifiedBy": "Shabeer (Manager)",
+      "verifiedAt": "2026-09-28T11:02:29.715Z"
+    },
+    {
+      "id": "S_1790593309069",
+      "date": "2026-09-28",
+      "dsr": "Kasun",
+      "brand": "Honor DSR",
+      "invNo": "274996033",
+      "dealer": "Dhanushka mobile",
+      "method": "Direct Deposit",
+      "amount": 100000,
+      "details": {
+        "depositBank": "Bank of Ceylon (BOC)",
+        "bankAccNo": "394",
+        "depositDate": "2026-09-23"
+      },
+      "status": "Verified",
+      "enteredBy": "Shabeer (Manager)",
+      "enteredAt": "2026-09-28T11:01:49.069Z",
+      "verifiedBy": "Shabeer (Manager)",
+      "verifiedAt": "2026-09-28T11:01:49.069Z"
+    },
+    {
+      "id": "S_1790593144814",
+      "date": "2026-09-28",
+      "dsr": "Madushan",
+      "brand": "VIVO DSR",
+      "invNo": "274995118",
+      "dealer": "Welcome Mobile",
+      "method": "Cash",
+      "amount": 10002,
+      "details": {},
+      "status": "Verified",
+      "enteredBy": "Shabeer (Manager)",
+      "enteredAt": "2026-09-28T10:59:04.814Z",
+      "verifiedBy": "Shabeer (Manager)",
+      "verifiedAt": "2026-09-28T10:59:04.814Z"
+    },
+    {
+      "id": "S_1790593125974",
+      "date": "2026-09-28",
+      "dsr": "Madushan",
+      "brand": "VIVO DSR",
+      "invNo": "274995118",
+      "dealer": "Welcome Mobile",
+      "method": "Direct Deposit",
+      "amount": 21000,
+      "details": {
+        "depositBank": "Bank of Ceylon (BOC)",
+        "bankAccNo": "394",
+        "depositDate": "2026-09-28"
+      },
+      "status": "Verified",
+      "enteredBy": "Shabeer (Manager)",
+      "enteredAt": "2026-09-28T10:58:45.974Z",
+      "verifiedBy": "Shabeer (Manager)",
+      "verifiedAt": "2026-09-28T10:58:45.974Z"
+    },
+    {
+      "id": "S_1790593046575",
+      "date": "2026-09-28",
+      "dsr": "Madushan",
+      "brand": "VIVO DSR",
+      "invNo": "274995884",
+      "dealer": "Onetouch mobile",
+      "method": "Cheque",
+      "amount": 152853,
+      "details": {
+        "chequeBank": "Commercial Bank",
+        "chequeNo": "774897",
+        "chequeDate": "2026-10-07"
+      },
+      "status": "Verified",
+      "enteredBy": "Shabeer (Manager)",
+      "enteredAt": "2026-09-28T10:57:26.575Z",
+      "verifiedBy": "Shabeer (Manager)",
+      "verifiedAt": "2026-09-28T10:57:26.575Z"
+    },
+    {
+      "id": "S_1790592668379",
+      "date": "2026-09-28",
+      "dsr": "Thuwan",
+      "brand": "Samsung DSR",
+      "invNo": "274995668",
+      "dealer": "VLP Mobile",
+      "method": "Direct Deposit",
+      "amount": 100000,
+      "details": {
+        "depositBank": "Bank of Ceylon (BOC)",
+        "bankAccNo": "713",
+        "depositDate": "2026-09-27"
+      },
+      "status": "Verified",
+      "enteredBy": "Shabeer (Manager)",
+      "enteredAt": "2026-09-28T10:51:08.379Z",
+      "verifiedBy": "Shabeer (Manager)",
+      "verifiedAt": "2026-09-28T10:51:08.379Z"
+    },
+    {
+      "id": "S_1790592621036",
+      "date": "2026-09-28",
+      "dsr": "Thuwan",
+      "brand": "Samsung DSR",
+      "invNo": "274996021",
+      "dealer": "NPA mobile",
+      "method": "Cheque",
+      "amount": 538290,
+      "details": {
+        "chequeBank": "Commercial Bank",
+        "chequeNo": "776480",
+        "chequeDate": "2026-10-20"
+      },
+      "status": "Verified",
+      "enteredBy": "Shabeer (Manager)",
+      "enteredAt": "2026-09-28T10:50:21.036Z",
+      "verifiedBy": "Shabeer (Manager)",
+      "verifiedAt": "2026-09-28T10:50:21.036Z"
+    },
+    {
+      "id": "S_1790592567338",
+      "date": "2026-09-28",
+      "dsr": "Thuwan",
+      "brand": "Samsung DSR",
+      "invNo": "274995910",
+      "dealer": "NPA mobile",
+      "method": "Cheque",
+      "amount": 477653,
+      "details": {
+        "chequeBank": "Commercial Bank",
+        "chequeNo": "776482",
+        "chequeDate": "2026-10-10"
+      },
+      "status": "Verified",
+      "enteredBy": "Shabeer (Manager)",
+      "enteredAt": "2026-09-28T10:49:27.338Z",
+      "verifiedBy": "Shabeer (Manager)",
+      "verifiedAt": "2026-09-28T10:49:27.338Z"
+    },
+    {
+      "id": "S_1790592507053",
+      "date": "2026-09-28",
+      "dsr": "Malisha",
+      "brand": "ZTE & nubia DSR",
+      "invNo": "274996020",
+      "dealer": "Rana Mobile",
+      "method": "Direct Deposit",
+      "amount": 42806,
+      "details": {
+        "depositBank": "Bank of Ceylon (BOC)",
+        "bankAccNo": "394",
+        "depositDate": "2026-09-27"
+      },
+      "status": "Verified",
+      "enteredBy": "Shabeer (Manager)",
+      "enteredAt": "2026-09-28T10:48:27.054Z",
+      "verifiedBy": "Shabeer (Manager)",
+      "verifiedAt": "2026-09-28T10:48:27.053Z"
+    },
+    {
+      "id": "S_1790592338696",
+      "date": "2026-09-28",
+      "dsr": "Malisha",
+      "brand": "ZTE & nubia DSR",
+      "invNo": "274995863",
+      "dealer": "Lakshan Mobile",
+      "method": "Cheque",
+      "amount": 143777,
+      "details": {
+        "chequeBank": "People's Bank",
+        "chequeNo": "000023",
+        "chequeDate": "2026-10-10"
+      },
+      "status": "Verified",
+      "enteredBy": "Shabeer (Manager)",
+      "enteredAt": "2026-09-28T10:45:38.696Z",
+      "verifiedBy": "Shabeer (Manager)",
+      "verifiedAt": "2026-09-28T10:45:38.696Z"
+    }
+  ],
+  "expenses": [
+    {
+      "id": "E_1791171240496",
+      "date": "2026-10-05",
+      "dsr": "Malisha",
+      "category": "Salary Advance",
+      "desc": "Salary Advance Anjana",
+      "amount": 10000
+    },
+    {
+      "id": "E_1791008148971",
+      "date": "2026-10-01",
+      "dsr": "Anjana",
+      "category": "Printing & Stationery",
+      "desc": "Sello tape",
+      "amount": 2680
+    },
+    {
+      "id": "E_1791008131124",
+      "date": "2026-10-01",
+      "dsr": "Anjana",
+      "category": "Printing & Stationery",
+      "desc": "A4,File,Pen,Gum",
+      "amount": 2375
+    },
+    {
+      "id": "E_1791008027779",
+      "date": "2026-10-01",
+      "dsr": "Malisha",
+      "category": "Salary Advance",
+      "desc": "",
+      "amount": 5000
+    },
+    {
+      "id": "E_1790941809023",
+      "date": "2026-10-02",
+      "dsr": "Thuwan",
+      "category": "Water Bill (NWSDB)",
+      "desc": "Drinking water",
+      "amount": 720
+    },
+    {
+      "id": "E_1790771153212",
+      "date": "2026-09-30",
+      "dsr": "Irshad",
+      "category": "Staff Welfare & Medical / Tea",
+      "desc": "Madhushan Loan Approved By Boss",
+      "amount": 90000
+    }
+  ],
+  "returnCheques": [
+    {
+      "id": "RC_1791007908716",
+      "returnDate": "2026-10-03",
+      "dsr": "Anjana",
+      "brand": "Nokia DSR",
+      "dealer": "Ahesh Mobile",
+      "invNo": "OLD RTN CheQUE",
+      "origChequeBank": "Bank of Ceylon (BOC)",
+      "origChequeNo": "312337",
+      "origChequeDate": "2026-09-01",
+      "origAmount": 241200,
+      "returnCharge": 190,
+      "totalRecoverable": 241390,
+      "reason": "Insufficient Funds / Refer to Drawer",
+      "remarks": "Partial Cash settlement of Rs. 150,000.00 recorded. Remaining balance to recover: Rs. 91,390.00",
+      "status": "Partially Settled",
+      "settlementDate": "2026-10-01",
+      "settlementMethod": "Cash",
+      "newChequeBank": "",
+      "newChequeNo": "",
+      "newChequeDate": "",
+      "newChequeAmount": 0,
+      "cashAmount": 150000,
+      "verifiedByManager": "Shabeer (Manager)",
+      "verifiedAt": "2026-10-03T06:12:12.117Z",
+      "settlements": [
+        {
+          "id": "SETT_1791007982925",
+          "date": "2026-10-01",
+          "method": "Cash",
+          "amount": 150000,
+          "bank": "",
+          "chequeNo": "",
+          "chequeDate": "",
+          "cashRef": "",
+          "notes": "",
+          "recordedAt": "2026-10-03T06:13:02.925Z"
+        }
+      ],
+      "settledAmount": 150000,
+      "balanceDue": 91390
+    }
+  ],
+  "routeTrips": [
+    {
+      "id": "trip_1790681608281",
+      "date": "2026-09-09",
+      "dsr": "Thuwan",
+      "routeName": "Thuwan - Daily Route Plan",
+      "startLocation": "P&A Main Office",
+      "endLocation": "P&A Office Return",
+      "legs": [
+        {
+          "stopName": "thsreghgbjk",
+          "km": 50
+        },
+        {
+          "stopName": "anuradhapura",
+          "km": 50
+        },
+        {
+          "stopName": "anurahfgj tow n",
+          "km": 23
+        }
+      ],
+      "endLegKm": 0,
+      "totalKm": 123,
+      "fuelEfficiencyKmPerL": 50,
+      "fuelLiters": 2.46,
+      "fuelPrice": 399,
+      "fuelCost": 981.54,
+      "notes": ""
+    },
+    {
+      "id": "trip_1725174000001",
+      "date": "2026-09-01",
+      "dsr": "Thuwan",
+      "routeName": "Colombo South & Liberty Plaza Route",
+      "startLocation": "P&A Main Office",
+      "endLocation": "P&A Office Return",
+      "legs": [
+        {
+          "stopName": "Liberty Plaza Tech Zone",
+          "km": 12
+        },
+        {
+          "stopName": "Majestic City Mobile Arcade",
+          "km": 6.5
+        },
+        {
+          "stopName": "Wellawatte Phone Market",
+          "km": 8.5
+        },
+        {
+          "stopName": "Dehiwala Junction Dealers",
+          "km": 11
+        }
+      ],
+      "endLegKm": 18,
+      "totalKm": 56,
+      "fuelEfficiencyKmPerL": 50,
+      "fuelLiters": 1.12,
+      "fuelPrice": 399,
+      "fuelCost": 446.88,
+      "notes": "Delivered 18 Samsung A-series handsets and collected 3 cheques"
+    },
+    {
+      "id": "trip_1725346800002",
+      "date": "2026-09-03",
+      "dsr": "Thuwan",
+      "routeName": "Mount Lavinia & Moratuwa Commercial Belt",
+      "startLocation": "P&A Main Office",
+      "endLocation": "P&A Office Return",
+      "legs": [
+        {
+          "stopName": "Ratmalana Industrial Zone",
+          "km": 16
+        },
+        {
+          "stopName": "Mount Lavinia Telecom Center",
+          "km": 8
+        },
+        {
+          "stopName": "Moratuwa Cross Road Stores",
+          "km": 14
+        },
+        {
+          "stopName": "Panadura Border Dealers",
+          "km": 15
+        }
+      ],
+      "endLegKm": 25,
+      "totalKm": 78,
+      "fuelEfficiencyKmPerL": 50,
+      "fuelLiters": 1.56,
+      "fuelPrice": 399,
+      "fuelCost": 622.44,
+      "notes": "Stock delivery to 12 retail outlets"
+    },
+    {
+      "id": "trip_1725778800003",
+      "date": "2026-09-08",
+      "dsr": "Thuwan",
+      "routeName": "Pettah & Colombo Central Wholesale Circuit",
+      "startLocation": "P&A Main Office",
+      "endLocation": "P&A Office Return",
+      "legs": [
+        {
+          "stopName": "Pettah 1st Cross Street",
+          "km": 8
+        },
+        {
+          "stopName": "Keyzer Street Distributors",
+          "km": 4.5
+        },
+        {
+          "stopName": "Maradana Tech Hub",
+          "km": 6.5
+        },
+        {
+          "stopName": "Borella Junction Mart",
+          "km": 8
+        }
+      ],
+      "endLegKm": 15,
+      "totalKm": 42,
+      "fuelEfficiencyKmPerL": 50,
+      "fuelLiters": 0.84,
+      "fuelPrice": 399,
+      "fuelCost": 335.16,
+      "notes": "Collected 4 cash payments and 2 PDCs"
+    },
+    {
+      "id": "trip_1726124400004",
+      "date": "2026-09-12",
+      "dsr": "Thuwan",
+      "routeName": "Nugegoda & Kottawa Dealer Circuit",
+      "startLocation": "P&A Main Office",
+      "endLocation": "P&A Office Return",
+      "legs": [
+        {
+          "stopName": "Nugegoda Supermarket Arcade",
+          "km": 14
+        },
+        {
+          "stopName": "Maharagama Main Street",
+          "km": 9
+        },
+        {
+          "stopName": "Kottawa Town Center",
+          "km": 12
+        },
+        {
+          "stopName": "Homagama Central Telecom",
+          "km": 11
+        }
+      ],
+      "endLegKm": 22,
+      "totalKm": 68,
+      "fuelEfficiencyKmPerL": 50,
+      "fuelLiters": 1.36,
+      "fuelPrice": 399,
+      "fuelCost": 542.64,
+      "notes": "Samsung display stand inspections"
+    },
+    {
+      "id": "trip_1726470000005",
+      "date": "2026-09-16",
+      "dsr": "Thuwan",
+      "routeName": "Dehiwala & Kohuwala Urban Route",
+      "startLocation": "P&A Main Office",
+      "endLocation": "P&A Office Return",
+      "legs": [
+        {
+          "stopName": "Kohuwala Junction",
+          "km": 11
+        },
+        {
+          "stopName": "Kalubowila Hospital Road",
+          "km": 6
+        },
+        {
+          "stopName": "Dehiwala Station Road",
+          "km": 7
+        }
+      ],
+      "endLegKm": 14,
+      "totalKm": 38,
+      "fuelEfficiencyKmPerL": 50,
+      "fuelLiters": 0.76,
+      "fuelPrice": 399,
+      "fuelCost": 303.24,
+      "notes": "Routine collection and stock verification"
+    },
+    {
+      "id": "trip_1726815600006",
+      "date": "2026-09-20",
+      "dsr": "Thuwan",
+      "routeName": "Battaramulla & Malabe Tech corridor",
+      "startLocation": "P&A Main Office",
+      "endLocation": "P&A Office Return",
+      "legs": [
+        {
+          "stopName": "Rajagiriya Town",
+          "km": 9
+        },
+        {
+          "stopName": "Battaramulla Junction",
+          "km": 7
+        },
+        {
+          "stopName": "Pelawatte Complex",
+          "km": 6
+        },
+        {
+          "stopName": "Malabe IT Hub Stores",
+          "km": 10
+        }
+      ],
+      "endLegKm": 18,
+      "totalKm": 50,
+      "fuelEfficiencyKmPerL": 50,
+      "fuelLiters": 1,
+      "fuelPrice": 399,
+      "fuelCost": 399,
+      "notes": "Delivered Samsung accessories"
+    },
+    {
+      "id": "trip_1727161200007",
+      "date": "2026-09-24",
+      "dsr": "Thuwan",
+      "routeName": "Colombo South Major Outlets",
+      "startLocation": "P&A Main Office",
+      "endLocation": "P&A Office Return",
+      "legs": [
+        {
+          "stopName": "Bambalapitiya Arcade",
+          "km": 10
+        },
+        {
+          "stopName": "Wellawatte Station Road",
+          "km": 8
+        },
+        {
+          "stopName": "Ratmalana Airport Road",
+          "km": 14
+        }
+      ],
+      "endLegKm": 20,
+      "totalKm": 52,
+      "fuelEfficiencyKmPerL": 50,
+      "fuelLiters": 1.04,
+      "fuelPrice": 399,
+      "fuelCost": 414.96,
+      "notes": "Cheque recovery route"
+    },
+    {
+      "id": "trip_1727420400008",
+      "date": "2026-09-27",
+      "dsr": "Thuwan",
+      "routeName": "Pettah & Colombo Harbour Edge Wholesale",
+      "startLocation": "P&A Main Office",
+      "endLocation": "P&A Office Return",
+      "legs": [
+        {
+          "stopName": "Pettah 2nd Cross Street",
+          "km": 9
+        },
+        {
+          "stopName": "Main Street Electronics",
+          "km": 5
+        },
+        {
+          "stopName": "Kotahena Mobile Point",
+          "km": 7
+        }
+      ],
+      "endLegKm": 14,
+      "totalKm": 35,
+      "fuelEfficiencyKmPerL": 50,
+      "fuelLiters": 0.7,
+      "fuelPrice": 399,
+      "fuelCost": 279.3,
+      "notes": "Special warranty returns and collection"
+    },
+    {
+      "id": "trip_1725260400009",
+      "date": "2026-09-02",
+      "dsr": "Irshad",
+      "routeName": "Wattala & Peliyagoda Industrial Route",
+      "startLocation": "P&A Main Office",
+      "endLocation": "P&A Office Return",
+      "legs": [
+        {
+          "stopName": "Peliyagoda New Bridge Market",
+          "km": 12
+        },
+        {
+          "stopName": "Wattala Mabola Mobile Center",
+          "km": 9
+        },
+        {
+          "stopName": "Hendala Junction Shops",
+          "km": 7
+        },
+        {
+          "stopName": "Kandana Town Stores",
+          "km": 11
+        }
+      ],
+      "endLegKm": 23,
+      "totalKm": 62,
+      "fuelEfficiencyKmPerL": 50,
+      "fuelLiters": 1.24,
+      "fuelPrice": 399,
+      "fuelCost": 494.76,
+      "notes": "Nokia feature phone distribution"
+    },
+    {
+      "id": "trip_1725519600010",
+      "date": "2026-09-05",
+      "dsr": "Irshad",
+      "routeName": "Ja-Ela & Seeduwa Commercial Corridor",
+      "startLocation": "P&A Main Office",
+      "endLocation": "P&A Office Return",
+      "legs": [
+        {
+          "stopName": "Ja-Ela K-Zone Telecom",
+          "km": 22
+        },
+        {
+          "stopName": "Ekala Industrial Area Stores",
+          "km": 9
+        },
+        {
+          "stopName": "Seeduwa Junction Mobile",
+          "km": 10
+        }
+      ],
+      "endLegKm": 29,
+      "totalKm": 70,
+      "fuelEfficiencyKmPerL": 50,
+      "fuelLiters": 1.4,
+      "fuelPrice": 399,
+      "fuelCost": 558.6,
+      "notes": "Full dealer coverage"
+    },
+    {
+      "id": "trip_1725865200011",
+      "date": "2026-09-09",
+      "dsr": "Irshad",
+      "routeName": "Negombo Coastal Town Route",
+      "startLocation": "P&A Main Office",
+      "endLocation": "P&A Office Return",
+      "legs": [
+        {
+          "stopName": "Katunayake FTZ Outlets",
+          "km": 31
+        },
+        {
+          "stopName": "Negombo Greens Road",
+          "km": 9
+        },
+        {
+          "stopName": "Negombo Main Street Tele Center",
+          "km": 6
+        },
+        {
+          "stopName": "Kochchikade Border",
+          "km": 12
+        }
+      ],
+      "endLegKm": 42,
+      "totalKm": 100,
+      "fuelEfficiencyKmPerL": 50,
+      "fuelLiters": 2,
+      "fuelPrice": 399,
+      "fuelCost": 798,
+      "notes": "Major deliveries to 16 stores"
+    },
+    {
+      "id": "trip_1726297200012",
+      "date": "2026-09-14",
+      "dsr": "Irshad",
+      "routeName": "Ragama & Kadawatha Suburban Circuit",
+      "startLocation": "P&A Main Office",
+      "endLocation": "P&A Office Return",
+      "legs": [
+        {
+          "stopName": "Ragama Railway Town",
+          "km": 18
+        },
+        {
+          "stopName": "Mahabage Junction",
+          "km": 6
+        },
+        {
+          "stopName": "Kadawatha Plaza",
+          "km": 12
+        }
+      ],
+      "endLegKm": 22,
+      "totalKm": 58,
+      "fuelEfficiencyKmPerL": 50,
+      "fuelLiters": 1.16,
+      "fuelPrice": 399,
+      "fuelCost": 462.84,
+      "notes": "New Nokia model launch posters & stock"
+    },
+    {
+      "id": "trip_1726642800013",
+      "date": "2026-09-18",
+      "dsr": "Irshad",
+      "routeName": "Gampaha Town & Kiribathgoda Route",
+      "startLocation": "P&A Main Office",
+      "endLocation": "P&A Office Return",
+      "legs": [
+        {
+          "stopName": "Kiribathgoda Town Mart",
+          "km": 16
+        },
+        {
+          "stopName": "Miriswatta Junction",
+          "km": 11
+        },
+        {
+          "stopName": "Gampaha Sanasa Complex",
+          "km": 8
+        },
+        {
+          "stopName": "Yakkala Crossroads",
+          "km": 7
+        }
+      ],
+      "endLegKm": 32,
+      "totalKm": 74,
+      "fuelEfficiencyKmPerL": 50,
+      "fuelLiters": 1.48,
+      "fuelPrice": 399,
+      "fuelCost": 590.52,
+      "notes": "High volume stock dispatch"
+    },
+    {
+      "id": "trip_1726988400014",
+      "date": "2026-09-22",
+      "dsr": "Irshad",
+      "routeName": "Negombo Central & Periyamulla Route",
+      "startLocation": "P&A Main Office",
+      "endLocation": "P&A Office Return",
+      "legs": [
+        {
+          "stopName": "Ja-Ela Bypass",
+          "km": 24
+        },
+        {
+          "stopName": "Negombo Sea Street",
+          "km": 14
+        },
+        {
+          "stopName": "Periyamulla Tech Shops",
+          "km": 5
+        }
+      ],
+      "endLegKm": 38,
+      "totalKm": 81,
+      "fuelEfficiencyKmPerL": 50,
+      "fuelLiters": 1.62,
+      "fuelPrice": 399,
+      "fuelCost": 646.38,
+      "notes": "Cheque settlements & collections"
+    },
+    {
+      "id": "trip_1727334000015",
+      "date": "2026-09-26",
+      "dsr": "Irshad",
+      "routeName": "Wattala & Mabola Saturday Route",
+      "startLocation": "P&A Main Office",
+      "endLocation": "P&A Office Return",
+      "legs": [
+        {
+          "stopName": "Wattala Commercial Hub",
+          "km": 14
+        },
+        {
+          "stopName": "Hunupitiya Station Road",
+          "km": 7
+        },
+        {
+          "stopName": "Kelaniya Temple Road Stores",
+          "km": 9
+        }
+      ],
+      "endLegKm": 18,
+      "totalKm": 48,
+      "fuelEfficiencyKmPerL": 50,
+      "fuelLiters": 0.96,
+      "fuelPrice": 399,
+      "fuelCost": 383.04,
+      "notes": "Weekend re-orders"
+    },
+    {
+      "id": "trip_1725346800016",
+      "date": "2026-09-03",
+      "dsr": "Anjana",
+      "routeName": "Kandy Central & Katugastota Route",
+      "startLocation": "Kandy Regional Depot",
+      "endLocation": "Kandy Regional Depot Return",
+      "legs": [
+        {
+          "stopName": "Kandy City Center Arcade",
+          "km": 4
+        },
+        {
+          "stopName": "Katugastota Bridge Marts",
+          "km": 8
+        },
+        {
+          "stopName": "Madawala Junction",
+          "km": 9
+        }
+      ],
+      "endLegKm": 15,
+      "totalKm": 36,
+      "fuelEfficiencyKmPerL": 50,
+      "fuelLiters": 0.72,
+      "fuelPrice": 399,
+      "fuelCost": 287.28,
+      "notes": "Central province distribution"
+    },
+    {
+      "id": "trip_1725692400017",
+      "date": "2026-09-07",
+      "dsr": "Anjana",
+      "routeName": "Peradeniya & Gampola Valley Route",
+      "startLocation": "Kandy Regional Depot",
+      "endLocation": "Kandy Regional Depot Return",
+      "legs": [
+        {
+          "stopName": "Peradeniya Campus Junction",
+          "km": 9
+        },
+        {
+          "stopName": "Gelioya Town Center",
+          "km": 11
+        },
+        {
+          "stopName": "Gampola Bus Stand Road",
+          "km": 12
+        },
+        {
+          "stopName": "Nawalapitiya Border",
+          "km": 16
+        }
+      ],
+      "endLegKm": 38,
+      "totalKm": 86,
+      "fuelEfficiencyKmPerL": 50,
+      "fuelLiters": 1.72,
+      "fuelPrice": 399,
+      "fuelCost": 686.28,
+      "notes": "High elevation hill country trip"
+    },
+    {
+      "id": "trip_1726038000018",
+      "date": "2026-09-11",
+      "dsr": "Anjana",
+      "routeName": "Pilimathalawa & Kadugannawa Highway Route",
+      "startLocation": "Kandy Regional Depot",
+      "endLocation": "Kandy Regional Depot Return",
+      "legs": [
+        {
+          "stopName": "Pilimathalawa Brass Town",
+          "km": 12
+        },
+        {
+          "stopName": "Kadugannawa Rock Tunnel Stores",
+          "km": 11
+        },
+        {
+          "stopName": "Mawanella Boundary",
+          "km": 14
+        }
+      ],
+      "endLegKm": 28,
+      "totalKm": 65,
+      "fuelEfficiencyKmPerL": 50,
+      "fuelLiters": 1.3,
+      "fuelPrice": 399,
+      "fuelCost": 518.7,
+      "notes": "Highway dealer deliveries"
+    },
+    {
+      "id": "trip_1726383600019",
+      "date": "2026-09-15",
+      "dsr": "Anjana",
+      "routeName": "Kundasale & Digana Growth Corridor",
+      "startLocation": "Kandy Regional Depot",
+      "endLocation": "Kandy Regional Depot Return",
+      "legs": [
+        {
+          "stopName": "Kundasale Industrial Park",
+          "km": 10
+        },
+        {
+          "stopName": "Digana Stadium Junction",
+          "km": 9
+        },
+        {
+          "stopName": "Teldeniya Town",
+          "km": 15
+        }
+      ],
+      "endLegKm": 26,
+      "totalKm": 60,
+      "fuelEfficiencyKmPerL": 50,
+      "fuelLiters": 1.2,
+      "fuelPrice": 399,
+      "fuelCost": 478.8,
+      "notes": "Nokia replenishment order"
+    },
+    {
+      "id": "trip_1726729200020",
+      "date": "2026-09-19",
+      "dsr": "Anjana",
+      "routeName": "Matale Highway Route",
+      "startLocation": "Kandy Regional Depot",
+      "endLocation": "Kandy Regional Depot Return",
+      "legs": [
+        {
+          "stopName": "Akiriyankumbura",
+          "km": 11
+        },
+        {
+          "stopName": "Alawatugoda Market",
+          "km": 10
+        },
+        {
+          "stopName": "Matale Clock Tower Plaza",
+          "km": 14
+        }
+      ],
+      "endLegKm": 32,
+      "totalKm": 67,
+      "fuelEfficiencyKmPerL": 50,
+      "fuelLiters": 1.34,
+      "fuelPrice": 399,
+      "fuelCost": 534.66,
+      "notes": "Matale district deliveries"
+    },
+    {
+      "id": "trip_1727074800021",
+      "date": "2026-09-23",
+      "dsr": "Anjana",
+      "routeName": "Kandy Inner City Retail Walk & Ride",
+      "startLocation": "Kandy Regional Depot",
+      "endLocation": "Kandy Regional Depot Return",
+      "legs": [
+        {
+          "stopName": "Dalada Veediya Mobile Shops",
+          "km": 5
+        },
+        {
+          "stopName": "Kotugodella Veediya Wholesale",
+          "km": 3.5
+        },
+        {
+          "stopName": "Peradeniya Road Telecom",
+          "km": 6.5
+        }
+      ],
+      "endLegKm": 8,
+      "totalKm": 23,
+      "fuelEfficiencyKmPerL": 50,
+      "fuelLiters": 0.46,
+      "fuelPrice": 399,
+      "fuelCost": 183.54,
+      "notes": "Short urban route"
+    },
+    {
+      "id": "trip_1725174000022",
+      "date": "2026-09-01",
+      "dsr": "Madushan",
+      "routeName": "Panadura & Wadduwa Coastal Route",
+      "startLocation": "P&A Main Office",
+      "endLocation": "P&A Office Return",
+      "legs": [
+        {
+          "stopName": "Moratuwa Egoda Uyana",
+          "km": 18
+        },
+        {
+          "stopName": "Panadura Clock Tower Point",
+          "km": 9
+        },
+        {
+          "stopName": "Wadduwa Railway Junction",
+          "km": 11
+        },
+        {
+          "stopName": "Pothupitiya Marts",
+          "km": 8
+        }
+      ],
+      "endLegKm": 36,
+      "totalKm": 82,
+      "fuelEfficiencyKmPerL": 50,
+      "fuelLiters": 1.64,
+      "fuelPrice": 399,
+      "fuelCost": 654.36,
+      "notes": "VIVO V-series flagship dealer setup"
+    },
+    {
+      "id": "trip_1725433200023",
+      "date": "2026-09-04",
+      "dsr": "Madushan",
+      "routeName": "Kalutara North & South Commercial Route",
+      "startLocation": "P&A Main Office",
+      "endLocation": "P&A Office Return",
+      "legs": [
+        {
+          "stopName": "Wadduwa Base",
+          "km": 32
+        },
+        {
+          "stopName": "Kalutara Bodhiya Plaza",
+          "km": 9
+        },
+        {
+          "stopName": "Kalutara South Main Street",
+          "km": 6
+        },
+        {
+          "stopName": "Katukurunda Junction",
+          "km": 8
+        }
+      ],
+      "endLegKm": 47,
+      "totalKm": 102,
+      "fuelEfficiencyKmPerL": 50,
+      "fuelLiters": 2.04,
+      "fuelPrice": 399,
+      "fuelCost": 813.96,
+      "notes": "Delivered 25 VIVO units"
+    },
+    {
+      "id": "trip_1725778800024",
+      "date": "2026-09-08",
+      "dsr": "Madushan",
+      "routeName": "Beruwala & Aluthgama Deep Coastal Route",
+      "startLocation": "P&A Main Office",
+      "endLocation": "P&A Office Return",
+      "legs": [
+        {
+          "stopName": "Kalutara South Pass",
+          "km": 42
+        },
+        {
+          "stopName": "Beruwala China Fort Telecom",
+          "km": 15
+        },
+        {
+          "stopName": "Aluthgama Benthota Bridge",
+          "km": 8
+        },
+        {
+          "stopName": "Dharga Town Marts",
+          "km": 7
+        }
+      ],
+      "endLegKm": 58,
+      "totalKm": 130,
+      "fuelEfficiencyKmPerL": 50,
+      "fuelLiters": 2.6,
+      "fuelPrice": 399,
+      "fuelCost": 1037.4,
+      "notes": "Long haul southern route"
+    },
+    {
+      "id": "trip_1726124400025",
+      "date": "2026-09-12",
+      "dsr": "Madushan",
+      "routeName": "Horana & Bandaragama Inland Highway Route",
+      "startLocation": "P&A Main Office",
+      "endLocation": "P&A Office Return",
+      "legs": [
+        {
+          "stopName": "Kesbewa Junction",
+          "km": 18
+        },
+        {
+          "stopName": "Bandaragama Town Center",
+          "km": 12
+        },
+        {
+          "stopName": "Horana Bus Stand Plaza",
+          "km": 16
+        },
+        {
+          "stopName": "Gonapola Junction",
+          "km": 14
+        }
+      ],
+      "endLegKm": 28,
+      "totalKm": 88,
+      "fuelEfficiencyKmPerL": 50,
+      "fuelLiters": 1.76,
+      "fuelPrice": 399,
+      "fuelCost": 702.24,
+      "notes": "Inland dealer network visits"
+    },
+    {
+      "id": "trip_1726556400026",
+      "date": "2026-09-17",
+      "dsr": "Madushan",
+      "routeName": "Panadura Town & Beach Road Stores",
+      "startLocation": "P&A Main Office",
+      "endLocation": "P&A Office Return",
+      "legs": [
+        {
+          "stopName": "Panadura Arthur V. Dias Mawatha",
+          "km": 26
+        },
+        {
+          "stopName": "Panadura Beach Road Techs",
+          "km": 5
+        },
+        {
+          "stopName": "Walana Junction",
+          "km": 6
+        }
+      ],
+      "endLegKm": 28,
+      "totalKm": 65,
+      "fuelEfficiencyKmPerL": 50,
+      "fuelLiters": 1.3,
+      "fuelPrice": 399,
+      "fuelCost": 518.7,
+      "notes": "Cash collection and restocking"
+    },
+    {
+      "id": "trip_1726902000027",
+      "date": "2026-09-21",
+      "dsr": "Madushan",
+      "routeName": "Kalutara & Paiyagala Semi-Urban Route",
+      "startLocation": "P&A Main Office",
+      "endLocation": "P&A Office Return",
+      "legs": [
+        {
+          "stopName": "Kalutara Clock Tower",
+          "km": 43
+        },
+        {
+          "stopName": "Paiyagala North Mobile",
+          "km": 9
+        },
+        {
+          "stopName": "Maggona Junction",
+          "km": 7
+        }
+      ],
+      "endLegKm": 52,
+      "totalKm": 111,
+      "fuelEfficiencyKmPerL": 50,
+      "fuelLiters": 2.22,
+      "fuelPrice": 399,
+      "fuelCost": 885.78,
+      "notes": "Collected 6 cheques and resolved warranty query"
+    },
+    {
+      "id": "trip_1725260400028",
+      "date": "2026-09-02",
+      "dsr": "Malisha",
+      "routeName": "Kaduwela & Hanwella High-Level Route",
+      "startLocation": "P&A Main Office",
+      "endLocation": "P&A Office Return",
+      "legs": [
+        {
+          "stopName": "Rajagiriya Flyover Edge",
+          "km": 9
+        },
+        {
+          "stopName": "Battaramulla Junction",
+          "km": 6
+        },
+        {
+          "stopName": "Kaduwela Expressway Exit",
+          "km": 11
+        },
+        {
+          "stopName": "Hanwella Town Center",
+          "km": 15
+        }
+      ],
+      "endLegKm": 34,
+      "totalKm": 75,
+      "fuelEfficiencyKmPerL": 50,
+      "fuelLiters": 1.5,
+      "fuelPrice": 399,
+      "fuelCost": 598.5,
+      "notes": "ZTE gaming phone demo displays"
+    },
+    {
+      "id": "trip_1725519600029",
+      "date": "2026-09-05",
+      "dsr": "Malisha",
+      "routeName": "Avissawella & Kosgama Commercial Highway",
+      "startLocation": "P&A Main Office",
+      "endLocation": "P&A Office Return",
+      "legs": [
+        {
+          "stopName": "Hanwella Bridge",
+          "km": 32
+        },
+        {
+          "stopName": "Kosgama Central Marts",
+          "km": 14
+        },
+        {
+          "stopName": "Avissawella Seethawaka Plaza",
+          "km": 16
+        },
+        {
+          "stopName": "Puwakpitiya Outlet",
+          "km": 6
+        }
+      ],
+      "endLegKm": 54,
+      "totalKm": 122,
+      "fuelEfficiencyKmPerL": 50,
+      "fuelLiters": 2.44,
+      "fuelPrice": 399,
+      "fuelCost": 973.56,
+      "notes": "Sabaragamuwa border delivery"
+    },
+    {
+      "id": "trip_1725951600030",
+      "date": "2026-09-10",
+      "dsr": "Malisha",
+      "routeName": "Homagama & Padukka Rural Connect Route",
+      "startLocation": "P&A Main Office",
+      "endLocation": "P&A Office Return",
+      "legs": [
+        {
+          "stopName": "Nugegoda Supermarket",
+          "km": 12
+        },
+        {
+          "stopName": "Homagama Hospital Junction",
+          "km": 14
+        },
+        {
+          "stopName": "Padukka Town Center",
+          "km": 13
+        }
+      ],
+      "endLegKm": 31,
+      "totalKm": 70,
+      "fuelEfficiencyKmPerL": 50,
+      "fuelLiters": 1.4,
+      "fuelPrice": 399,
+      "fuelCost": 558.6,
+      "notes": "ZTE Blade series distribution"
+    },
+    {
+      "id": "trip_1726383600031",
+      "date": "2026-09-15",
+      "dsr": "Malisha",
+      "routeName": "Godagama & Meegoda Economic Center Route",
+      "startLocation": "P&A Main Office",
+      "endLocation": "P&A Office Return",
+      "legs": [
+        {
+          "stopName": "Kottawa Junction Point",
+          "km": 19
+        },
+        {
+          "stopName": "Godagama Crossroads",
+          "km": 8
+        },
+        {
+          "stopName": "Meegoda Economic Center Stores",
+          "km": 7
+        }
+      ],
+      "endLegKm": 28,
+      "totalKm": 62,
+      "fuelEfficiencyKmPerL": 50,
+      "fuelLiters": 1.24,
+      "fuelPrice": 399,
+      "fuelCost": 494.76,
+      "notes": "Routine collection and sales pitch"
+    },
+    {
+      "id": "trip_1726729200032",
+      "date": "2026-09-19",
+      "dsr": "Malisha",
+      "routeName": "Malabe & Athurugiriya Tech Hubs",
+      "startLocation": "P&A Main Office",
+      "endLocation": "P&A Office Return",
+      "legs": [
+        {
+          "stopName": "Malabe SLIIT Junction",
+          "km": 17
+        },
+        {
+          "stopName": "Athurugiriya Clock Tower",
+          "km": 9
+        },
+        {
+          "stopName": "Hokandara Crossroads",
+          "km": 7
+        }
+      ],
+      "endLegKm": 21,
+      "totalKm": 54,
+      "fuelEfficiencyKmPerL": 50,
+      "fuelLiters": 1.08,
+      "fuelPrice": 399,
+      "fuelCost": 430.92,
+      "notes": "Nubia phone display setup"
+    },
+    {
+      "id": "trip_1727161200033",
+      "date": "2026-09-24",
+      "dsr": "Malisha",
+      "routeName": "Hanwella & Labugama Edge Route",
+      "startLocation": "P&A Main Office",
+      "endLocation": "P&A Office Return",
+      "legs": [
+        {
+          "stopName": "Kaduwela Town",
+          "km": 21
+        },
+        {
+          "stopName": "Hanwella Junction",
+          "km": 16
+        },
+        {
+          "stopName": "Thummodara Mart",
+          "km": 11
+        }
+      ],
+      "endLegKm": 42,
+      "totalKm": 90,
+      "fuelEfficiencyKmPerL": 50,
+      "fuelLiters": 1.8,
+      "fuelPrice": 399,
+      "fuelCost": 718.2,
+      "notes": "End of month target push"
+    },
+    {
+      "id": "trip_1725174000034",
+      "date": "2026-09-01",
+      "dsr": "Kasun",
+      "routeName": "Kurunegala Town Central & Circular Road",
+      "startLocation": "Kurunegala Depot",
+      "endLocation": "Kurunegala Depot Return",
+      "legs": [
+        {
+          "stopName": "Kurunegala Clock Tower Plaza",
+          "km": 5
+        },
+        {
+          "stopName": "Dambulla Road Telecoms",
+          "km": 8
+        },
+        {
+          "stopName": "Negombo Road Junction",
+          "km": 7
+        }
+      ],
+      "endLegKm": 12,
+      "totalKm": 32,
+      "fuelEfficiencyKmPerL": 50,
+      "fuelLiters": 0.64,
+      "fuelPrice": 399,
+      "fuelCost": 255.36,
+      "notes": "Honor Magic series rollout"
+    },
+    {
+      "id": "trip_1725433200035",
+      "date": "2026-09-04",
+      "dsr": "Kasun",
+      "routeName": "Narammala & Giriulla Highway Route",
+      "startLocation": "Kurunegala Depot",
+      "endLocation": "Kurunegala Depot Return",
+      "legs": [
+        {
+          "stopName": "Narammala Town Center",
+          "km": 18
+        },
+        {
+          "stopName": "Dambadeniya Junction",
+          "km": 10
+        },
+        {
+          "stopName": "Giriulla Bridge Stores",
+          "km": 14
+        }
+      ],
+      "endLegKm": 36,
+      "totalKm": 78,
+      "fuelEfficiencyKmPerL": 50,
+      "fuelLiters": 1.56,
+      "fuelPrice": 399,
+      "fuelCost": 622.44,
+      "notes": "Honor X-series bulk order dispatch"
+    },
+    {
+      "id": "trip_1725692400036",
+      "date": "2026-09-07",
+      "dsr": "Kasun",
+      "routeName": "Kuliyapitiya Educational & Trade Center",
+      "startLocation": "Kurunegala Depot",
+      "endLocation": "Kurunegala Depot Return",
+      "legs": [
+        {
+          "stopName": "Katupotha Crossroad",
+          "km": 22
+        },
+        {
+          "stopName": "Kuliyapitiya Town Plaza",
+          "km": 15
+        },
+        {
+          "stopName": "Madampe Boundary",
+          "km": 18
+        }
+      ],
+      "endLegKm": 45,
+      "totalKm": 100,
+      "fuelEfficiencyKmPerL": 50,
+      "fuelLiters": 2,
+      "fuelPrice": 399,
+      "fuelCost": 798,
+      "notes": "Delivered 22 Honor devices"
+    },
+    {
+      "id": "trip_1726124400037",
+      "date": "2026-09-12",
+      "dsr": "Kasun",
+      "routeName": "Wariyapola & Padeniya Junction Route",
+      "startLocation": "Kurunegala Depot",
+      "endLocation": "Kurunegala Depot Return",
+      "legs": [
+        {
+          "stopName": "Wariyapola Clock Tower",
+          "km": 18
+        },
+        {
+          "stopName": "Padeniya Sacred Junction",
+          "km": 16
+        },
+        {
+          "stopName": "Kobeigane Marts",
+          "km": 15
+        }
+      ],
+      "endLegKm": 41,
+      "totalKm": 90,
+      "fuelEfficiencyKmPerL": 50,
+      "fuelLiters": 1.8,
+      "fuelPrice": 399,
+      "fuelCost": 718.2,
+      "notes": "Collected 5 cheques and 1 deposit slip"
+    },
+    {
+      "id": "trip_1726470000038",
+      "date": "2026-09-16",
+      "dsr": "Kasun",
+      "routeName": "Ibbagamuwa & Gokarella Route",
+      "startLocation": "Kurunegala Depot",
+      "endLocation": "Kurunegala Depot Return",
+      "legs": [
+        {
+          "stopName": "Ibbagamuwa Central",
+          "km": 14
+        },
+        {
+          "stopName": "Melsiripura Mart",
+          "km": 13
+        },
+        {
+          "stopName": "Gokarella Junction",
+          "km": 10
+        }
+      ],
+      "endLegKm": 31,
+      "totalKm": 68,
+      "fuelEfficiencyKmPerL": 50,
+      "fuelLiters": 1.36,
+      "fuelPrice": 399,
+      "fuelCost": 542.64,
+      "notes": "Dambulla highway border trip"
+    },
+    {
+      "id": "trip_1726902000039",
+      "date": "2026-09-21",
+      "dsr": "Kasun",
+      "routeName": "Mawatagama & Pilessa Suburb Route",
+      "startLocation": "Kurunegala Depot",
+      "endLocation": "Kurunegala Depot Return",
+      "legs": [
+        {
+          "stopName": "Pilessa Junction",
+          "km": 9
+        },
+        {
+          "stopName": "Mawatagama Export Processing Zone",
+          "km": 12
+        },
+        {
+          "stopName": "Polgahawela Rail Road",
+          "km": 16
+        }
+      ],
+      "endLegKm": 27,
+      "totalKm": 64,
+      "fuelEfficiencyKmPerL": 50,
+      "fuelLiters": 1.28,
+      "fuelPrice": 399,
+      "fuelCost": 510.72,
+      "notes": "Honor warranty unit replacement"
+    },
+    {
+      "id": "trip_1727334000040",
+      "date": "2026-09-26",
+      "dsr": "Kasun",
+      "routeName": "Narammala & Alawwa Weekend Route",
+      "startLocation": "Kurunegala Depot",
+      "endLocation": "Kurunegala Depot Return",
+      "legs": [
+        {
+          "stopName": "Narammala Town",
+          "km": 18
+        },
+        {
+          "stopName": "Alawwa River Bridge Stores",
+          "km": 16
+        }
+      ],
+      "endLegKm": 30,
+      "totalKm": 64,
+      "fuelEfficiencyKmPerL": 50,
+      "fuelLiters": 1.28,
+      "fuelPrice": 399,
+      "fuelCost": 510.72,
+      "notes": "Weekend recovery and stock delivery"
+    }
+  ],
+  "attendanceData": {
+    "2026-10": {
+      "monthKey": "2026-10",
+      "year": 2026,
+      "month": 10,
+      "daysInMonth": 31,
+      "events": {
+        "25": {
+          "title": "Vap Full Moon Poya Day 🌕",
+          "isPoya": true
+        }
+      },
+      "records": {
+        "Shabeer": {
+          "1": {
+            "status": "P",
+            "inTime": "08:30",
+            "outTime": "19:00",
+            "otHours": 2,
+            "notes": ""
+          },
+          "2": {
+            "status": "P",
+            "inTime": "08:30",
+            "outTime": "19:00",
+            "otHours": 2,
+            "notes": ""
+          },
+          "3": {
+            "status": "P",
+            "inTime": "08:30",
+            "outTime": "14:00",
+            "otHours": 0,
+            "notes": ""
+          },
+          "4": {
+            "status": "OFF",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": "Sunday Off"
+          },
+          "5": {
+            "status": "P",
+            "inTime": "08:30",
+            "outTime": "18:00",
+            "otHours": 1,
+            "notes": ""
+          },
+          "6": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "7": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "8": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "9": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "10": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "11": {
+            "status": "OFF",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": "Sunday Off"
+          },
+          "12": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "13": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "14": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "15": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "16": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "17": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "18": {
+            "status": "OFF",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": "Sunday Off"
+          },
+          "19": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "20": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "21": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "22": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "23": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "24": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "25": {
+            "status": "OFF",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": "Sunday Off"
+          },
+          "26": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "27": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "28": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "29": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "30": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "31": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          }
+        },
+        "Kavindi": {
+          "1": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "2": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "3": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "4": {
+            "status": "OFF",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": "Sunday Off"
+          },
+          "5": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "6": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "7": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "8": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "9": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "10": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "11": {
+            "status": "OFF",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": "Sunday Off"
+          },
+          "12": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "13": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "14": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "15": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "16": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "17": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "18": {
+            "status": "OFF",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": "Sunday Off"
+          },
+          "19": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "20": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "21": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "22": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "23": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "24": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "25": {
+            "status": "OFF",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": "Sunday Off"
+          },
+          "26": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "27": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "28": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "29": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "30": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "31": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          }
+        },
+        "Thuwan": {
+          "1": {
+            "status": "P",
+            "inTime": "08:30",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "2": {
+            "status": "P",
+            "inTime": "08:30",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "3": {
+            "status": "P",
+            "inTime": "08:30",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "4": {
+            "status": "OFF",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": "Sunday Off"
+          },
+          "5": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "6": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "7": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "8": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "9": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "10": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "11": {
+            "status": "OFF",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": "Sunday Off"
+          },
+          "12": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "13": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "14": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "15": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "16": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "17": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "18": {
+            "status": "OFF",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": "Sunday Off"
+          },
+          "19": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "20": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "21": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "22": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "23": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "24": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "25": {
+            "status": "OFF",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": "Sunday Off"
+          },
+          "26": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "27": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "28": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "29": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "30": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "31": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          }
+        },
+        "Irshad": {
+          "1": {
+            "status": "P",
+            "inTime": "08:30",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "2": {
+            "status": "P",
+            "inTime": "08:30",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "3": {
+            "status": "P",
+            "inTime": "08:30",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "4": {
+            "status": "OFF",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": "Sunday Off"
+          },
+          "5": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "6": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "7": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "8": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "9": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "10": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "11": {
+            "status": "OFF",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": "Sunday Off"
+          },
+          "12": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "13": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "14": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "15": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "16": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "17": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "18": {
+            "status": "OFF",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": "Sunday Off"
+          },
+          "19": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "20": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "21": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "22": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "23": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "24": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "25": {
+            "status": "OFF",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": "Sunday Off"
+          },
+          "26": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "27": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "28": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "29": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "30": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "31": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          }
+        },
+        "Anjana": {
+          "1": {
+            "status": "P",
+            "inTime": "08:30",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "2": {
+            "status": "P",
+            "inTime": "08:30",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "3": {
+            "status": "P",
+            "inTime": "08:30",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "4": {
+            "status": "OFF",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": "Sunday Off"
+          },
+          "5": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "6": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "7": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "8": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "9": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "10": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "11": {
+            "status": "OFF",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": "Sunday Off"
+          },
+          "12": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "13": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "14": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "15": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "16": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "17": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "18": {
+            "status": "OFF",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": "Sunday Off"
+          },
+          "19": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "20": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "21": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "22": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "23": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "24": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "25": {
+            "status": "OFF",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": "Sunday Off"
+          },
+          "26": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "27": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "28": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "29": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "30": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "31": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          }
+        },
+        "Madushan": {
+          "1": {
+            "status": "LV",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "2": {
+            "status": "LV",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "3": {
+            "status": "LV",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "4": {
+            "status": "OFF",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": "Sunday Off"
+          },
+          "5": {
+            "status": "P",
+            "inTime": "08:30",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "6": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "7": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "8": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "9": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "10": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "11": {
+            "status": "OFF",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": "Sunday Off"
+          },
+          "12": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "13": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "14": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "15": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "16": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "17": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "18": {
+            "status": "OFF",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": "Sunday Off"
+          },
+          "19": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "20": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "21": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "22": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "23": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "24": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "25": {
+            "status": "OFF",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": "Sunday Off"
+          },
+          "26": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "27": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "28": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "29": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "30": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "31": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          }
+        },
+        "Malisha": {
+          "1": {
+            "status": "P",
+            "inTime": "08:30",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "2": {
+            "status": "P",
+            "inTime": "08:30",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "3": {
+            "status": "P",
+            "inTime": "08:30",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "4": {
+            "status": "OFF",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": "Sunday Off"
+          },
+          "5": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "6": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "7": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "8": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "9": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "10": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "11": {
+            "status": "OFF",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": "Sunday Off"
+          },
+          "12": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "13": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "14": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "15": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "16": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "17": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "18": {
+            "status": "OFF",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": "Sunday Off"
+          },
+          "19": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "20": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "21": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "22": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "23": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "24": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "25": {
+            "status": "OFF",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": "Sunday Off"
+          },
+          "26": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "27": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "28": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "29": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "30": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "31": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          }
+        },
+        "Kasun": {
+          "1": {
+            "status": "LV",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "2": {
+            "status": "P",
+            "inTime": "08:30",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "3": {
+            "status": "LV",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "4": {
+            "status": "OFF",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": "Sunday Off"
+          },
+          "5": {
+            "status": "P",
+            "inTime": "08:30",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "6": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "7": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "8": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "9": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "10": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "11": {
+            "status": "OFF",
+            "inTime": "08:30",
+            "outTime": "",
+            "otHours": 0,
+            "notes": "Sunday Off"
+          },
+          "12": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "13": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "14": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "15": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "16": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "17": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "18": {
+            "status": "OFF",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": "Sunday Off"
+          },
+          "19": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "20": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "21": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "22": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "23": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "24": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "25": {
+            "status": "OFF",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": "Sunday Off"
+          },
+          "26": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "27": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "28": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "29": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "30": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          },
+          "31": {
+            "status": "-",
+            "inTime": "",
+            "outTime": "",
+            "otHours": 0,
+            "notes": ""
+          }
+        }
+      }
+    }
+  },
+  "cashBankingRecords": {
+    "2026-09-29": {
+      "date": "2026-09-29",
+      "sampath": 62425,
+      "ntb": 0,
+      "sampathRef": "1",
+      "ntbRef": "",
+      "notes": "",
+      "updatedAt": "2026-09-29T10:56:50.581Z",
+      "updatedBy": "Shabeer (Manager)"
+    },
+    "2026-09-28": {
+      "date": "2026-09-28",
+      "sampath": 10002,
+      "ntb": 0,
+      "sampathRef": "",
+      "ntbRef": "",
+      "notes": "",
+      "updatedAt": "2026-09-29T11:02:11.739Z",
+      "updatedBy": "Shabeer (Manager)"
+    },
+    "2026-09-30": {
+      "date": "2026-09-30",
+      "sampath": 210301,
+      "ntb": 0,
+      "sampathRef": "",
+      "ntbRef": "",
+      "notes": "",
+      "updatedAt": "2026-09-30T12:38:24.774Z",
+      "updatedBy": "Shabeer (Manager)"
+    },
+    "2026-10-02": {
+      "date": "2026-10-02",
+      "sampath": 13280,
+      "ntb": 0,
+      "sampathRef": "",
+      "ntbRef": "",
+      "notes": "",
+      "updatedAt": "2026-10-02T11:50:30.905Z",
+      "updatedBy": "Shabeer (Manager)",
+      "slips": [
+        {
+          "id": "slip_s_il3xa8",
+          "bank": "Sampath",
+          "dsr": "Office / General Cash",
+          "amount": 13280,
+          "slipRef": "",
+          "notes": ""
+        }
+      ]
+    },
+    "2026-10-01": {
+      "date": "2026-10-01",
+      "sampath": 139945,
+      "ntb": 0,
+      "sampathRef": "Anjana",
+      "ntbRef": "",
+      "notes": "",
+      "slips": [
+        {
+          "id": "slip_1791008321260_oxts",
+          "bank": "Sampath",
+          "dsr": "Anjana Cash",
+          "amount": 139945,
+          "slipRef": "",
+          "notes": ""
+        }
+      ],
+      "updatedAt": "2026-10-03T06:19:18.476Z",
+      "updatedBy": "Shabeer (Manager)"
+    },
+    "2026-10-05": {
+      "date": "2026-10-05",
+      "sampath": 118417,
+      "ntb": 0,
+      "sampathRef": "Malisha",
+      "ntbRef": "",
+      "notes": "",
+      "slips": [
+        {
+          "id": "slip_1791185733654_dobd",
+          "bank": "Sampath",
+          "dsr": "Malisha Cash",
+          "amount": 118417,
+          "slipRef": "",
+          "notes": ""
+        }
+      ],
+      "updatedAt": "2026-10-05T07:36:13.198Z",
+      "updatedBy": "Shabeer (Manager)"
+    }
+  },
+  "monthlyTrendsData": {
+    "horizon": {
+      "m1": "September",
+      "m2": "October",
+      "m3": "November"
+    },
+    "dsrs": {
+      "Thuwan": {
+        "target": 2500000,
+        "m1Sales": 21467000,
+        "m2Sales": 0,
+        "m3Base": 0
+      },
+      "Irshad": {
+        "target": 1000000,
+        "m1Sales": 4577000,
+        "m2Sales": 0,
+        "m3Base": 0
+      },
+      "Anjana": {
+        "target": 1000000,
+        "m1Sales": 3676000,
+        "m2Sales": 0,
+        "m3Base": 0
+      },
+      "Madushan": {
+        "target": 1500000,
+        "m1Sales": 7427000,
+        "m2Sales": 0,
+        "m3Base": 0
+      },
+      "Malisha": {
+        "target": 1000000,
+        "m1Sales": 6411000,
+        "m2Sales": 0,
+        "m3Base": 0
+      },
+      "Kasun": {
+        "target": 1500000,
+        "m1Sales": 1069000,
+        "m2Sales": 0,
+        "m3Base": 0
+      }
+    }
+  },
+  "sheetUrl": "https://script.google.com/macros/s/AKfycby86Ss8CmWAAERk2RjVP6vmpBkHBxmmbPSpajM4800SidGA5ooTaULpvqokEXbqF8yChA/exec"
+};
+
+    let sales = [];
+    try {
+      const stored = localStorage.getItem('PA_SALES_V2');
+      if (stored) sales = JSON.parse(stored);
+    } catch(e) {}
+    if (!sales || sales.length === 0) {
+      sales = DEFAULT_SYSTEM_SEED.sales ? JSON.parse(JSON.stringify(DEFAULT_SYSTEM_SEED.sales)) : [];
+      try { localStorage.setItem('PA_SALES_V2', JSON.stringify(sales)); } catch(e) {}
+    }
     // Strict Clean Production: Purge any legacy demo transactions
     sales = sales.filter(s => s.id !== '1' && s.id !== '2' && s.id !== '3' && s.id !== '4' && !s.invNo?.startsWith('INV-88') && !s.invNo?.startsWith('INV-77') && !s.invNo?.startsWith('INV-994'));
-    // Purge all sales data in November month as requested by user so manager can record manually day by day or adjust values
     sales = sales.filter(s => !(s.date && (s.date.includes('-11-') || s.date.startsWith('2026-11') || s.date.includes('/11/'))));
     try { localStorage.setItem('PA_SALES_V2', JSON.stringify(sales)); } catch(e) {}
     sales.forEach(s => { s.amount = parseAmount(s.amount); });
 
-    let expenses = JSON.parse(localStorage.getItem('PA_EXP_V2')) || [];
-    // Strict Clean Production: Purge any legacy demo expenses
+    let expenses = [];
+    try {
+      const stored = localStorage.getItem('PA_EXP_V2');
+      if (stored) expenses = JSON.parse(stored);
+    } catch(e) {}
+    if (!expenses || expenses.length === 0) {
+      expenses = DEFAULT_SYSTEM_SEED.expenses ? JSON.parse(JSON.stringify(DEFAULT_SYSTEM_SEED.expenses)) : [];
+      try { localStorage.setItem('PA_EXP_V2', JSON.stringify(expenses)); } catch(e) {}
+    }
     expenses = expenses.filter(e => e.id !== '1' && e.id !== '2' && e.id !== '3');
     expenses.forEach(e => { e.amount = parseAmount(e.amount); });
 
-    let returnCheques = JSON.parse(localStorage.getItem('PA_RETURNS_V2')) || [];
-    // Strict Clean Production: Purge any legacy demo return cheques
+    let returnCheques = [];
+    try {
+      const stored = localStorage.getItem('PA_RETURNS_V2');
+      if (stored) returnCheques = JSON.parse(stored);
+    } catch(e) {}
+    if (!returnCheques || returnCheques.length === 0) {
+      returnCheques = DEFAULT_SYSTEM_SEED.returnCheques ? JSON.parse(JSON.stringify(DEFAULT_SYSTEM_SEED.returnCheques)) : [];
+      try { localStorage.setItem('PA_RETURNS_V2', JSON.stringify(returnCheques)); } catch(e) {}
+    }
     returnCheques = returnCheques.filter(r => r.id !== 'RC_1' && r.id !== 'RC_2');
     returnCheques.forEach(r => {
       r.origAmount = parseAmount(r.origAmount);
@@ -6255,7 +10665,10 @@ function doPost(e) {
       if (r.cashAmount) r.cashAmount = parseAmount(r.cashAmount);
     });
 
-    let sheetUrl = localStorage.getItem('PA_SHEET_URL') || '';
+    let sheetUrl = localStorage.getItem('PA_SHEET_URL') || DEFAULT_SYSTEM_SEED.sheetUrl || 'https://script.google.com/macros/s/AKfycby86Ss8CmWAAERk2RjVP6vmpBkHBxmmbPSpajM4800SidGA5ooTaULpvqokEXbqF8yChA/exec';
+    if (!localStorage.getItem('PA_SHEET_URL') && sheetUrl) {
+      try { localStorage.setItem('PA_SHEET_URL', sheetUrl); } catch(e) {}
+    }
 
     // ==================== TAB 5: MONTHLY SALES TRENDS DATA ====================
     let monthlyTrendsData = JSON.parse(localStorage.getItem('PA_MONTHLY_TRENDS_V1')) || {
@@ -6306,21 +10719,14 @@ function doPost(e) {
       }
     };
 
-    let cashBankingRecords = JSON.parse(localStorage.getItem('PA_CASH_BANKING_V1')) || {};
+    let cashBankingRecords = null;
+    try {
+      const stored = localStorage.getItem('PA_CASH_BANKING_V1');
+      if (stored) cashBankingRecords = JSON.parse(stored);
+    } catch(e) {}
     if (!cashBankingRecords || Object.keys(cashBankingRecords).length === 0) {
-      const todayKey = new Date().toISOString().split('T')[0];
-      cashBankingRecords = {};
-      cashBankingRecords[todayKey] = {
-        date: todayKey,
-        sampath: 60000,
-        ntb: 40000,
-        sampathRef: 'DEP-552-01',
-        ntbRef: 'DEP-7782-01',
-        notes: 'Today Cash Deposit Split (Sampath 552 & NTB 7782)',
-        updatedAt: new Date().toISOString(),
-        updatedBy: 'Manager Shabeer'
-      };
-      localStorage.setItem('PA_CASH_BANKING_V1', JSON.stringify(cashBankingRecords));
+      cashBankingRecords = DEFAULT_SYSTEM_SEED.cashBankingRecords ? JSON.parse(JSON.stringify(DEFAULT_SYSTEM_SEED.cashBankingRecords)) : {};
+      try { localStorage.setItem('PA_CASH_BANKING_V1', JSON.stringify(cashBankingRecords)); } catch(e) {}
     }
 
     let chart3MonthInstance = null;
@@ -6371,6 +10777,10 @@ function doPost(e) {
       attendanceData = JSON.parse(localStorage.getItem('PA_ATTENDANCE_V2')) || null;
     } catch(e) {
       attendanceData = null;
+    }
+    if (!attendanceData && typeof DEFAULT_SYSTEM_SEED !== 'undefined' && DEFAULT_SYSTEM_SEED.attendanceData) {
+      attendanceData = JSON.parse(JSON.stringify(DEFAULT_SYSTEM_SEED.attendanceData));
+      try { localStorage.setItem('PA_ATTENDANCE_V2', JSON.stringify(attendanceData)); } catch(e) {}
     }
     let chartStaffAttendanceInstance = null;
     let chartWorkforcePresenceInstance = null;
@@ -13210,6 +17620,16 @@ function getDsrCommuteKm(dsrName) {
 window.getDsrCommuteKm = getDsrCommuteKm;
 
 let routeTrips = [];
+try {
+  const storedTrips = localStorage.getItem('PA_DSR_ROUTE_MILEAGE_V1');
+  if (storedTrips) routeTrips = JSON.parse(storedTrips);
+} catch(e) {}
+if (!routeTrips || routeTrips.length === 0) {
+  if (typeof DEFAULT_SYSTEM_SEED !== 'undefined' && Array.isArray(DEFAULT_SYSTEM_SEED.routeTrips) && DEFAULT_SYSTEM_SEED.routeTrips.length > 0) {
+    routeTrips = JSON.parse(JSON.stringify(DEFAULT_SYSTEM_SEED.routeTrips));
+    try { localStorage.setItem('PA_DSR_ROUTE_MILEAGE_V1', JSON.stringify(routeTrips)); } catch(_) {}
+  }
+}
 
 function generateInitialRouteTrips() {
   const trips = [
@@ -13993,8 +18413,14 @@ function initMileageDataIfEmpty() {
       console.error('Failed to parse routeTrips from localStorage', e);
       routeTrips = [];
     }
-  } else {
-    routeTrips = [];
+  }
+  if (!routeTrips || routeTrips.length === 0) {
+    if (typeof DEFAULT_SYSTEM_SEED !== 'undefined' && Array.isArray(DEFAULT_SYSTEM_SEED.routeTrips) && DEFAULT_SYSTEM_SEED.routeTrips.length > 0) {
+      routeTrips = JSON.parse(JSON.stringify(DEFAULT_SYSTEM_SEED.routeTrips));
+      try { localStorage.setItem('PA_DSR_ROUTE_MILEAGE_V1', JSON.stringify(routeTrips)); } catch(_) {}
+    } else {
+      routeTrips = [];
+    }
   }
 
   const storedPrice = localStorage.getItem('PA_DSR_PETROL_PRICE');
