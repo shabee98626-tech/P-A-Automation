@@ -1,0 +1,22 @@
+{
+  "name": "pa-distributors-sales-os",
+  "version": "2.0.0",
+  "description": "P&A Distributors - Daily Sales OS & Enterprise Automation Platform",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "keywords": [
+    "distributor",
+    "sales-os",
+    "automation",
+    "enterprise",
+    "sri-lanka"
+  ],
+  "author": "P&A Distributors (Pvt) Ltd",
+  "license": "ISC"
+}
